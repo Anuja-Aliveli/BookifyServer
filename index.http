@@ -5,8 +5,7 @@ Content-Type: application/json
   "username": "Anuja",
   "password": "anuja123",
   "name": "Anuja",
-  "gender": "female",
-  "userId": 1
+  "gender": "female"
 }
 ###
 POST http://localhost:5000/login/

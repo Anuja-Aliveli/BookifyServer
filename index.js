@@ -52,7 +52,7 @@ app.get("/", async (request, response) => {
 
 app.post("/register/", async (request, response) => {
   const registerDetails = request.body;
-  const { username, password, name, gender, userId } = registerDetails;
+  const { username, password, name, gender} = registerDetails;
   const usersCollection = db.collection("user");
 
   const existingUser = await usersCollection.findOne({ username });
@@ -62,6 +62,8 @@ app.post("/register/", async (request, response) => {
     if (password.length < 6) {
       response.status(400).json({ error: "Password is too short" });
     } else {
+      const getUserLength = await usersCollection.find({}).toArray();
+      const userId = getUserLength.length + 1;
       const hashedPassword = await bcrypt.hash(password, 10);
       const userDocument = {
         username,

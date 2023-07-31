@@ -1,4 +1,4 @@
-POST https://bookifybackend.vercel.app/register
+POST https://bookifyserver.cyclic.cloud/register/
 Content-Type: application/json
 
 {
@@ -9,7 +9,7 @@ Content-Type: application/json
   "userId": 1
 }
 ###
-POST http://localhost:5000/login/
+POST https://bookifyserver.cyclic.cloud/login/
 Content-Type: application/json
 
 {
